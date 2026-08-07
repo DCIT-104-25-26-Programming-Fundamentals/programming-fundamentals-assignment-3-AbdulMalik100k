@@ -48,5 +48,23 @@
 // =============================================================================
 // YOUR CODE BELOW — remove the // symbols from the scaffold and fill it in
 // =============================================================================
+const readlineSync = require("readline-sync");
+function main() {
+  const score = readlineSync.questionInt("Enter student score (0-100): ");
+  if (score < 0 || score > 100) {
+    console.log("Error: Score must be between 0 and 100. ");
+  } else if (score >= 80) {
+    console.log("Grade: A");
+  } else if (score >= 70) {
+    console.log("Grade: B");
+  } else if (score >= 60) {
+    console.log("Grade: C");
+  } else if (score >= 50) {
+    console.log("Grade: D");
+  } else {
+    console.log("Grade: F");
+  }
+}
+main();
 
 
