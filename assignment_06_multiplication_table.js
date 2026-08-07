@@ -58,5 +58,58 @@
 // =============================================================================
 // YOUR CODE BELOW — remove the // symbols from the scaffold and fill it in
 // =============================================================================
+const readlineSync = require('readline-sync');
+
+function printSingleTable(number) {
+  // Check if the number is valid
+  if (number <= 0) {
+    console.log('Error: Please enter a positive integer.');
+    return;
+  }
+
+  console.log(`\nMultiplication Table for ${number}:`);
+
+  // Loop from 1 to 12
+  for (let i = 1; i <= 12; i++) {
+    let result = number * i;
+    console.log(`${number} x ${i} = ${result}`);
+  }
+}
+
+  // Check if N is valid
+  if (n <= 0) {
+    console.log('Error: Please enter a positive integer.');
+    return;
+  }
+
+  // Outer loop: for every number from 1 to N
+  for (let num = 1; num <= n; num++) {
+    console.log(`\nMultiplication Table for ${num}:`);
+
+    // Inner loop: multiply by 1 to 12
+    for (let i = 1; i <= 12; i++) {
+      let result = num * i;
+      console.log(`${num} x ${i} = ${result}`);
+    }
+
+    // Separator line between tables
+    console.log('-------------------');
+  }
+}
+
+
+console.log('===== MULTIPLICATION TABLE GENERATOR =====\n');
+
+// ---------- PART A ----------
+console.log('----- PART A: Single Table -----');
+let number = readlineSync.questionInt('Enter a number: ');
+printSingleTable(number);
+
+// ---------- PART B ----------
+console.log('\n----- PART B: Tables from 1 to N -----');
+let n = readlineSync.questionInt('Enter a number N: ');
+printTablesUpTo(n);
+
+console.log('\n===== Program finished =====');
 
 
